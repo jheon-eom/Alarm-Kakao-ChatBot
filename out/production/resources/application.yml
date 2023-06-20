@@ -1,0 +1,8 @@
+spring:
+  # ?? ?? ???
+  output:
+    ansi:
+      enabled: always
+  # api-key.yml ?? ??
+  config:
+    import: classpath:api-key.yml
