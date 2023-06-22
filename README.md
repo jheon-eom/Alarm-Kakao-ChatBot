@@ -24,3 +24,4 @@ GET /api/v1/weather/{time}
 
 ## API 흐름
 
+<img width="649" alt="스크린샷 2023-06-22 오전 10 27 19" src="https://github.com/jheon-eom/Weather-Api-Bot/assets/79975547/7d1c4798-2e1b-4205-987c-0781295de248">
