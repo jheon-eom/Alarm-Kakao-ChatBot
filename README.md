@@ -24,3 +24,8 @@ GET /api/v1/weather/{time}
 
 ## API 흐름
 
+<img width="649" alt="스크린샷 2023-06-22 오전 10 27 19" src="https://github.com/jheon-eom/Weather-Api-Bot/assets/79975547/7d1c4798-2e1b-4205-987c-0781295de248">
+
+## 기능개선 및 업데이트
+- 리팩토링 및 기능 확장 아이디어 구상 (ex 날씨를 넘어서 생활정보를 가져오기?)
+- 스케줄러와 카톡 API를 이용해 정해진 시간대에 카톡 메시지 전송 기능 추가
