@@ -13,17 +13,19 @@ import java.io.IOException;
 @Slf4j
 public class HttpUtil {
 
-    public static String requestGet(String key, Site site) {
+    public static String requestGet(String key, Site site, String today, String time) {
         String url = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst"
                 + "?serviceKey=" + key
                 + "&numOfRows=10"
                 + "&pageNo=1"
                 + "&dataType=JSON"
-                + "&base_date=20230621"
-                + "&base_time=0600"
+                + "&base_date=" + today
+                + "&base_time=" + time
                 + "&nx=" + site.getNx()
                 + "&ny=" + site.getNy()
                 ;
+        log.info("request url = {}", url);
+
         String responseDataJson = null;
 
         try {
