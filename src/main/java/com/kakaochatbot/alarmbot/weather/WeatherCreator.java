@@ -4,8 +4,11 @@ import java.util.List;
 
 public class WeatherCreator {
 
-    public static WeatherMessage extractWeatherMessage(List<Weather> osan, List<Weather> gangnam, List<Weather> pangyo) {
+    public static WeatherMessage extractWeatherMessage(String time, List<Weather> osan,
+                                                       List<Weather> gangnam, List<Weather> pangyo) {
         WeatherMessage weatherMessage = new WeatherMessage();
+
+        weatherMessage.setRequestTime(time);
 
         for (Weather w : osan) {
             if (w.getCategory().equals(WeatherCategory.RN1.name())) {

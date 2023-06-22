@@ -6,6 +6,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class WeatherMessage {
+    private String requestTime; // 요청 시간
+
     private String osanREH; // 오산 습도
     private String osanRN1; // 오산 강수량
     private String osanT1H; // 오산 기온

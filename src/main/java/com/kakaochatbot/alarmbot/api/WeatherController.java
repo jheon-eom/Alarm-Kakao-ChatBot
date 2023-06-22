@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,23 +38,9 @@ public class WeatherController {
 //        return ResponseEntity.ok(HttpStatus.OK);
 //    }
 
-    @GetMapping("/morning")
-    public ResponseEntity<WeatherMessage> callWeatherMorning() {
-        WeatherMessage weatherMessage = weatherService.callWeatherMorning(weatherKey);
-
-        return ResponseEntity.ok(weatherMessage);
-    }
-
-    @GetMapping("/afternoon")
-    public ResponseEntity<WeatherMessage> callWeatherAfternoon() {
-        WeatherMessage weatherMessage = weatherService.callWeatherAfternoon(weatherKey);
-
-        return ResponseEntity.ok(weatherMessage);
-    }
-
-    @GetMapping("/night")
-    public ResponseEntity<WeatherMessage> callWeatherNight() {
-        WeatherMessage weatherMessage = weatherService.callWeatherNight(weatherKey);
+    @GetMapping("/{time}")
+    public ResponseEntity<WeatherMessage> callWeather(@PathVariable("time") String time) {
+        WeatherMessage weatherMessage = weatherService.callWeather(weatherKey, time);
 
         return ResponseEntity.ok(weatherMessage);
     }
