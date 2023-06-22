@@ -63,8 +63,7 @@ public class KakaoUtil {
      * send kakaotalk message
      */
     public static void sendKakaoTalk(WeatherMessage message, String time, String key) {
-        try {
-            CloseableHttpClient httpClient = HttpClients.createDefault();
+        try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             HttpPost httpPost = new HttpPost(URL);
             httpPost.setHeader("Authorization", "Bearer " + key);
             httpPost.setHeader("Content-Type", CONTENT_TYPE);
@@ -86,8 +85,6 @@ public class KakaoUtil {
 
             HttpResponse response = httpClient.execute(httpPost);
             System.out.println("===========response = " + response);
-
-            httpClient.close();
         } catch (Exception e) {
             e.printStackTrace();
             log.error("json process error!!!");

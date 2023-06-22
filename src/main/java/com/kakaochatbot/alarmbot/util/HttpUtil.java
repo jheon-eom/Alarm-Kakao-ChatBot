@@ -28,16 +28,13 @@ public class HttpUtil {
 
         String responseDataJson = null;
 
-        try {
-            CloseableHttpClient httpClient = HttpClients.createDefault();
+        try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             HttpGet httpGet = new HttpGet(url);
 
             CloseableHttpResponse httpResponse = httpClient.execute(httpGet);
             responseDataJson = EntityUtils.toString(httpResponse.getEntity(), "UTF-8");
 
             log.info("response json data = {}", responseDataJson);
-
-            httpClient.close();
         } catch (IOException e) {
             e.printStackTrace();
             log.error("Network communication failed!!!");
